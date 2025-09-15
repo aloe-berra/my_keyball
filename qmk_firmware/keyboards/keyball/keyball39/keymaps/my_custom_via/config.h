@@ -40,6 +40,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 #define AUTO_MOUSE_DEFAULT_LAYER 1
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+
 #define HOLD_ON_OTHER_KEY_PRESS
 
 #ifdef RGB_MATRIX_ENABLE
@@ -59,7 +61,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #   define SPLIT_LAYER_STATE_ENABLE // allows layer leds to be addressed on the second side
 #   define SPLIT_MODS_ENABLE // allows mods to address leds on the second side.
 
-#endif
+#   define LAYER_0_INDICATOR_RGB RGB_OFF
+#   define LAYER_1_INDICATOR_RGB RGB_PURPLE
+#   define LAYER_2_INDICATOR_RGB RGB_CORAL
+#   define LAYER_3_INDICATOR_RGB RGB_YELLOW
+#   define LAYER_4_INDICATOR_RGB RGB_AZURE
+#   define LAYER_5_INDICATOR_RGB RGB_MAGENTA
 
+#endif
 
 #define RGB_DISABLE_WHEN_USB_SUSPENDED

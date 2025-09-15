@@ -50,6 +50,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , SCRL_DVD ,                            CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE ,
     QK_BOOT  , KBC_RST  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , KBC_RST  , QK_BOOT
   ),
+
+  [4] = LAYOUT_universal(
+    KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
+    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
+    KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
+    KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_LNG2),LT(1,KC_SPC),LT(3,KC_LNG1),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
+  ),
+
+  [5] = LAYOUT_universal(
+    KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
+    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
+    KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
+    KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_LNG2),LT(1,KC_SPC),LT(3,KC_LNG1),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
+  ),
 };
 // clang-format on
 
@@ -65,16 +79,22 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
       continue;
     switch(get_highest_layer(layer_state|default_layer_state)) {
       case 0:
-        rgb_matrix_set_color(i, RGB_OFF);
+        rgb_matrix_set_color(i, LAYER_0_INDICATOR_RGB);
         break;
       case 1:
-        rgb_matrix_set_color(i, RGB_PURPLE);
+        rgb_matrix_set_color(i, LAYER_1_INDICATOR_RGB);
         break;
       case 2:
-        rgb_matrix_set_color(i, RGB_CORAL);
+        rgb_matrix_set_color(i, LAYER_2_INDICATOR_RGB);
         break;
       case 3:
-        rgb_matrix_set_color(i, RGB_YELLOW);
+        rgb_matrix_set_color(i, LAYER_3_INDICATOR_RGB);
+        break;
+      case 4:
+        rgb_matrix_set_color(i, LAYER_4_INDICATOR_RGB);
+        break;
+      case 5:
+        rgb_matrix_set_color(i, LAYER_5_INDICATOR_RGB);
         break;
     }
   }
